@@ -26,7 +26,7 @@ def get_stock_price_tool(stock_name: str) -> str:
     - 总市值
     - 交易所信息
     """
-    info = FinancialDataAPI.get_stock_info(stock_name)
+    info = FinancialDataAPI.get_stock_info_with_fallback(stock_name)
     return FinancialDataAPI.format_stock_info(info)
 
 
@@ -66,7 +66,7 @@ def get_stock_history_tool(stock_name_and_days: str) -> str:
             return "❌ 天数必须在1-365之间"
 
         # Get price change analysis
-        analysis = FinancialDataAPI.calculate_price_change(stock_name, days)
+        analysis = FinancialDataAPI.calculate_price_change_with_fallback(stock_name, days)
         return FinancialDataAPI.format_price_change(analysis, stock_name)
 
     except Exception as e:
