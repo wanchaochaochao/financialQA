@@ -381,6 +381,8 @@ curl http://localhost:8000/api/dashboard
 
 ### 使用示例
 
+![获取实时股价](images/007.png)
+
 #### 示例 1: 实时股价查询
 
 ```
